@@ -74,53 +74,60 @@ $(function() {
 });
 
 
+//스크롤효과
+function scrollAni(){
 
-
-// parallax
-
-$(function(){
+    var $ptitle=$('.portfolio_title'),
+        
+        $skill=$('.skill'),
+        
+        $stitle=$('.skill_title'),
     
-    var $skill=$('.skill'),
-    
-        $portfolio = $('.portfolio'),
-        
-        $pa_title = $('.portfolio h2:after'),
-        
-        $pb_title = $('.portfolio h2:before');
-        
-        
-        
-    $(document).ready(function(){
-        
-          
-        
-    });    
-    
+        scroll = $(window).scrollTop(),
 
-    $(window).scroll(function (){
-
-        var scroll = $(window).scrollTop();
-
-        var windowHeight = $(window).height();
+        windowHeight = $(window).height();
       
+        
+    
+    
+    
+        $ptitle.each(function(){
+            
+            var elPosition = $(this).offset().top;
+            
+            if(scroll>elPosition-windowHeight+150){
+                
+                $(this).addClass("is-shown")
+            };
+        });
+    
         $skill.each(function(){  
 
             var $item_wrapp=$('.skill .item_wrapp'),
                 
                 $constellation=$('.constellation'),
           
-                imgPos =  $skill.offset().top;  
+                elPosition =  $skill.offset().top;  
               
-            if (scroll > imgPos - windowHeight + 50){
+            if (scroll > elPosition - windowHeight + 50){
 
                 $item_wrapp.addClass('iwrapp_ani');
                 
-                $constellation.addClass('constellation_ani')
+                $constellation.addClass('constellation_ani');
+                
+                $stitle.addClass("is-shown")
             };       
+        }); 
+    };
+       
+    $(document).ready(function(){
+        scrollAni();
+         $(window).scroll(scrollAni)
+          
+        
+    });    
     
-        });
-    });
-});
+
 
 
 
