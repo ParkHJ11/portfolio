@@ -211,17 +211,18 @@ header nav.gnb ul.menu-list li a{
     width: 100%;
     height: auto;
     margin: 0 auto;
-    text-align: center;
 }
-.portfolio h2.portfolio_title {
+.portfolio h2.section_title, .skill h2.section_title {
     margin: 0 auto;
     position: relative;
+    width: 550px;
+    height: 64px;
 }
 
 .title_label{
-    display: inline-block;
-    opacity: 0;
+    display:inline-block;
     text-align: center;
+    opacity: 0;
     margin: 0 auto;
     width: auto;
     height: 64px;
@@ -229,12 +230,52 @@ header nav.gnb ul.menu-list li a{
     font-size: 1.5rem;
     letter-spacing: 0.3em;
     transition: all 1s;
-    color: 0c1122;
-    margin-left: 10px;
+    color: #0c1122;
+    padding: 0 10px 0 20px;
+    background-color: #f5f5f5;
+    position: absolute;
+    z-index: 12;
+    left: 32%;
+    font-weight: bold;
+}
+
+.skill .title_label{
+    background-color: #0c1122;
+}
+.skill .section_title::before, .skill .section_title::after{
+    background-color: #ff8540;
+} 
+.section_title::before, .section_title::after{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    z-index: 10;
+    background-color: #0c1122;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.075,0.82,0.165,1);
+    transition-property: transform;
+    width: 180px;
+    height: 3px;
+    top: 42%;
+    transform: scaleX(0);
+    transition-delay: 0s;
+}
+.section_title::before{
+    left: 0px;
+    transform-origin: left center 0px;
+}
+.section_title::after{
+    right: 0;
+    transform-origin: right center 0px;
 }
 h2.is-shown span.title_label{
     opacity: 1;
 }
+h2.is-shown::after, h2.is-shown::before{
+    transform: scaleX(1);
+}
+
+/*
 .border-v::before, .border-v::after, .border-h::before, .border-h::after{    
     content: "";
     display: block;
@@ -262,12 +303,10 @@ h2.is-shown span.title_label{
     transform-origin: right center 0px;
 }
 
-
-
 h2.is-shown .border-v::after, h2.is-shown .border-v::before{
     transform: scaleX(1);
 }
-
+*/
 
 
 
@@ -306,6 +345,7 @@ h2.is-shown .border-v::after, h2.is-shown .border-v::before{
     display: block;
     width: 240px;
     height: 200px;
+    vertical-align: top;
 }
 
 
@@ -325,19 +365,15 @@ h2.is-shown .border-v::after, h2.is-shown .border-v::before{
     background-size: cover;
     background-color: #0c1122;
 }
-
-.skill h2.skill_title{
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-    width: 550px;
-}
-
-.skill h2.skill_title span{
-    width: auto;
+.skill .title_label{
+    background-color: #0c1122;
     color: #ff8540;
-    letter-spacing: 0.3em;
 }
+.skill .section_title::before, .skill .section_title::after{
+    background-color: #ff8540;
+} 
+
+
 
 .skill .item_wrapp{
     position:relative;
@@ -551,6 +587,7 @@ header nav.gnb ul.menu-list li:hover>a:after{
     display: inline-block;
     width: 240px;
     height: 200px;
+    font-size: 0;
 }
 
         
@@ -662,29 +699,13 @@ header nav.gnb ul.menu-list{
 }
 
 
-
-
-
-.skill .item_wrapp{
-    position:relative;
-    opacity: 0;
-    width: 46%;
-    height: auto;
-    top: 16%;
-    left: 120%;
-    text-align: center;    
-    box-sizing: border-box;
-    border-radius: 6px;    
-    box-shadow: 20px 20px 40px 12px rgba(5,8,20,0.5);
-    border: 2px solid #04060D;
-    /*
-    background-color: rgba(61,82,153,0.8);
     
-    background-color: #060912;
-    */
-    background-color: #0B0F1F;
-    padding: 2% 2%;
-    transition: all 1s;
+    
+    
+.skill .item_wrapp{
+    width: 46%;
+    top: 16%;
+    left: 120%;  
 }      
 
 .iwrapp_ani{
