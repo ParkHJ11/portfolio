@@ -73,50 +73,38 @@ $(function () {
 });
 
 
-//스크롤효과
-function scrollAni() {
 
-    var $ptitle = $('.portfolio_title'),
 
-        $skill = $('.skill'),
-
-        $stitle = $('.skill_title'),
-
+//스크롤 효과
+function scrollAni(){
+    
+    var $title = $('.section_title'),
+        
         scroll = $(window).scrollTop(),
 
         windowHeight = $(window).height();
-
-
-
-
-
-    $ptitle.each(function () {
-
-        var elPosition = $(this).offset().top;
-
-        if (scroll > elPosition - windowHeight + 200) {
-
-            $(this).addClass("is-shown");
+        
+    
+    
+    $title.each(function() {
+        
+        var elposition = $(this).offset().top,
+            
+            $constellation = $('.constellation');
+        
+        if (scroll > elposition - windowHeight+250){
+            
+            $(this).addClass("is-shown"),
+            
+            $(this).siblings('.item_wrapp').addClass('iwrapp_ani'),
+             
+            $(this).siblings($constellation).addClass('constellation_ani');
+            
+         
         }
     });
-
-    $skill.each(function () {
-
-        var $item_wrapp = $('.skill .item_wrapp'),
-
-            $constellation = $('.constellation'),
-
-            elPosition = $skill.offset().top;
-
-        if (scroll > elPosition - windowHeight + 100) {
-
-            $item_wrapp.addClass('iwrapp_ani');
-
-            $constellation.addClass('constellation_ani');
-
-            $stitle.addClass("is-shown");
-        }
-    });
+    
+        
 }
 
 $(document).ready(function () {
@@ -125,3 +113,45 @@ $(document).ready(function () {
 
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

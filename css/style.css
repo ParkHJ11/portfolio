@@ -59,7 +59,7 @@ header nav.gnb ul.menu-list li:hover {
 
 header nav.gnb ul.menu-list li a {
     color: white;
-    font-size: 1.2em;
+    font-size: 1rem;
     display: block;
     letter-spacing: 0.1em;
 }
@@ -93,12 +93,11 @@ header nav.gnb ul.menu-list li a {
     width: 400px;
     height: 200px;
     position: absolute;
-    top: 300px;
+    top: 260px;
     left: 50%;
     margin-left: -200px;
     text-align: center;
     color: white;
-
 }
 
 .intro-center h2,
@@ -116,7 +115,7 @@ h4 {
 }
 
 .intro-center h2.welcome span {
-    font-size: 64px;
+    font-size: 3.5rem;
     font-family: 'Satisfy';
     font-weight: bold;
     color: #11b7da;
@@ -151,12 +150,12 @@ h4 {
 }
 
 .intro-center h4 span {
-    font-size: 26px;
+    font-size: 1.3rem;
     font-weight: normal;
 }
 
 .intro-center h3 span {
-    font-size: 40px;
+    font-size: 2.2rem;
     font-weight: normal;
 }
 
@@ -308,6 +307,7 @@ h2.is-shown span.title_label {
     transition-duration: 0.3s;
     transition-property: transform;
 }
+
 .border-v::before,
 .border-v::after {
     width: 4px;
@@ -315,6 +315,7 @@ h2.is-shown span.title_label {
     bottom: 0px;
     transform: scaleY(0);
 }
+
 .border-v::before {
     transition-delay: 0.8s;
     left: 0px;
@@ -326,8 +327,9 @@ h2.is-shown span.title_label {
     right: 0;
     transform-origin: center top 0px;
 }
+
 .border-h::before,
-.border-h::after{
+.border-h::after {
     height: 4px;
 
     right: 0px;
@@ -336,6 +338,7 @@ h2.is-shown span.title_label {
 
     transform: scaleX(0);
 }
+
 .border-h::before {
     transition-delay: 1s;
 
@@ -526,7 +529,18 @@ h2.is-shown span.title_label {
     header nav.gnb ul.menu-list li:hover > a:after {
         width: 100%;
     }
-
+    .intro-center {
+        top: 300px;
+    }
+    .intro-center h2.welcome span {
+        font-size: 4rem;
+    }
+    .intro-center h4 span {
+        font-size: 1.6rem;
+    }
+    .intro-center h3 span {
+        font-size: 2.5rem;
+    }
     .portfolio h2.section_title,
     .skill h2.section_title {
         width: 550px;
@@ -539,6 +553,7 @@ h2.is-shown span.title_label {
         position: absolute;
         z-index: 10;
         background-color: #0c1122;
+        transition-delay: 1s;
         transition-duration: 1s;
         transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
         transition-property: transform;
