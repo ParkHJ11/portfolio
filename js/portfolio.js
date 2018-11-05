@@ -1,3 +1,4 @@
+
 // smooth scroll
 
 // Custom scrolling speed with jQuery
@@ -72,9 +73,6 @@ $(function () {
 
 });
 
-
-
-
 //스크롤 효과
 function scrollAni(){
     
@@ -92,7 +90,7 @@ function scrollAni(){
             
             $constellation = $('.constellation');
         
-        if (scroll > elposition - windowHeight+250){
+        if (scroll > elposition - windowHeight+50){
             
             $(this).addClass("is-shown"),
             
@@ -101,6 +99,8 @@ function scrollAni(){
             $(this).siblings($constellation).addClass('constellation_ani');
             
          
+        }else{
+            $(this).removeClass("is-shown");
         }
     });
     
@@ -110,8 +110,15 @@ function scrollAni(){
 $(document).ready(function () {
     scrollAni();
     $(window).scroll(scrollAni);
-
-
+    
+    $(".menu-list li>a").click(function() {
+    var scrollPosition = $($(this).attr('href')).offset().top;
+     console.log(scrollPosition);
+    
+    $("html, body").stop().animate({
+        scrollTop : scrollPosition
+    }, 500);
+    });
 });
 
 
