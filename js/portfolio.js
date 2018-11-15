@@ -86,17 +86,15 @@ function scrollAni(){
     
     $title.each(function() {
         
-        var elposition = $(this).offset().top,
+        var elposition = $(this).offset().top;
             
-            $constellation = $('.constellation');
-        
         if (scroll > elposition - windowHeight+50){
             
             $(this).addClass("is-shown"),
             
             $(this).siblings('.item_wrapp').addClass('iwrapp_ani'),
              
-            $(this).siblings($constellation).addClass('constellation_ani');
+            $(this).siblings('.constellation').addClass('constellation_ani');
             
          
         }else{
@@ -111,7 +109,7 @@ $(document).ready(function () {
     scrollAni();
     $(window).scroll(scrollAni);
     
-    $(".menu-list li>a").click(function() {
+     $(".menu-list li>a").on('click',function(event) {
     var scrollPosition = $($(this).attr('href')).offset().top;
      console.log(scrollPosition);
     
@@ -119,9 +117,11 @@ $(document).ready(function () {
         scrollTop : scrollPosition
     }, 500);
     });
+    
 });
 
 
+   
 
 
 

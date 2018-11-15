@@ -182,16 +182,17 @@ h4 {
 }
 
 .portfolio h2.section_title,
-.skill h2.section_title {
+.skill h2.section_title,
+.contact h2.section_title{
     margin: 0 auto;
     position: relative;
     width: 100%;
     height: 64px;
+    text-align: center;
 }
 
 .title_label {
     display: inline-block;
-    text-align: center;
     opacity: 0;
     margin: 0 auto;
     width: auto;
@@ -205,7 +206,7 @@ h4 {
     background-color: #f5f5f5;
     position: absolute;
     z-index: 12;
-    left: 20%;
+    left: 28%;
     font-weight: bold;
 }
 
@@ -481,13 +482,64 @@ h2.is-shown span.title_label {
 }
 
 
+/*-----------
+    footer
+------------*/
+footer.contact{
+    position: relative;
+    width: 100%;
+    height: 1080px;
+    padding-top: 85px;
+    box-sizing: border-box;
+    background-color: #7984a5;
+} 
+footer .title_label{
+    color: #0c1122;
+    background-color: #7984a5;    
+}
+
+footer .item_wrapp {
+    position: relative;
+    width: 88%;
+    margin: 0 auto;
+    height: 300px;
+    top: 10%;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: #0B0F1F;
+    padding: 2%;
+    transition: all 1s;
+}
+.item_wrapp .mailTo{
+    margin-top: 90px;
+    text-align: center;
+    
+}
+.item_wrapp .mailTo>a{
+    font-size: 1.2em;
+    color: #fff;
+    letter-spacing: 0.2em;
+}
+.item_wrapp .mailTo>a:hover{
+    opacity: 0.7;
+}
+
+
+
+
+
+
 /* Tablet & Desktop Device */
 /* 태블릿과 데스크톱의 공통 코드*/
 @media only screen and (min-device-width : 768px) {
     header .inner {
         padding-top: 24px;
     }
-
+    header .inner:after{
+        content: "";
+        display: block;
+        clear: both;
+    }
     header .inner h1.logo {
         float: left;
         width: 250px;
@@ -506,10 +558,11 @@ h2.is-shown span.title_label {
 
     header .inner nav.gnb ul.menu-list li {
         display: inline-block;
-        width: 120px;
-        padding: 0 30px;
+        width: 80px;
+        padding: 0 10px;
         font-size: 0;
     }
+
     header nav.gnb ul.menu-list li a {
         font-size: 0.9rem;
         color: white;
@@ -527,21 +580,27 @@ h2.is-shown span.title_label {
 
     header nav.gnb ul.menu-list li:hover > a:after {
         width: 100%;
-    }    
+    }
+
     .intro-center {
         top: 300px;
     }
+
     .intro-center h2.welcome span {
         font-size: 4rem;
     }
+
     .intro-center h4 span {
         font-size: 1.6rem;
     }
+
     .intro-center h3 span {
         font-size: 2.5rem;
     }
+
     .portfolio h2.section_title,
-    .skill h2.section_title {
+    .skill h2.section_title,
+    .contact h2.section_title{
         width: 550px;
     }
 
@@ -584,7 +643,8 @@ h2.is-shown span.title_label {
 
 
     .portfolio h2 span.title_label,
-    .skill h2 span.title_label {
+    .skill h2 span.title_label,
+    footer h2 span.title_label{
         font-size: 1.5rem;
         left: 32%;
     }
@@ -613,18 +673,15 @@ h2.is-shown span.title_label {
     .skill h2 span:after {
         background-color: #ff8540;
     }
-
-
-
     .skill .item_wrapp {
         opacity: 0;
         width: 56%;
         top: 14%;
-        left: 120%;
+        left: 112%;
         box-shadow: 20px 20px 40px 12px rgba(5, 8, 20, 0.5);
         border: 2px solid #04060D;
         background-color: #0B0F1F;
-        transition-delay:0.4s;
+        transition-delay: 0.4s;
     }
 
     .iwrapp_ani {
@@ -636,6 +693,26 @@ h2.is-shown span.title_label {
         font-size: 18px;
 
     }
+    
+    
+    footer .section_title::before,
+    footer .section_title::after {
+        background-color:  #0c1122;
+    }
+    footer .title_label{
+        padding-left: 30px;
+    }
+    footer .item_wrapp {
+        opacity: 0;
+        width: 56%;
+        top: 14%;
+        left: 112%;
+        box-shadow: 20px 20px 40px 12px rgba(5, 8, 20, 0.5);
+       
+        background-color: #0B0F1F;
+        transition-delay: 0.4s;
+    }
+
 
 }
 
@@ -686,16 +763,15 @@ h2.is-shown span.title_label {
         align-content: space-between;
     }
 
-    .portfolio_item {
-    }
+    .portfolio_item {}
 
-    .portfolio_item img {
-    }
+    .portfolio_item img {}
 
 
     .skill .item_wrapp {
         width: 46%;
         top: 16%;
+        left: 120%;
     }
 
     .iwrapp_ani {
@@ -716,6 +792,10 @@ h2.is-shown span.title_label {
 
     }
 
-
+    footer .item_wrapp{
+        width: 30%;
+        top: 16%;
+        left: 78%;
+    }
 
 }
